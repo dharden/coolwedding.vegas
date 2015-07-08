@@ -2,11 +2,41 @@
 <html>
   <head>
     <title>cool wedding</title>
+<link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    @-moz-keyframes swing{
+      0%{-moz-transform:rotate(-3deg)}
+      50%{-moz-transform:rotate(3deg)}
+      100%{-moz-transform:rotate(-3deg)}
+    }
+    @-webkit-keyframes swing{
+      0%{-webkit-transform:rotate(-3deg)}
+      50%{-webkit-transform:rotate(3deg)}
+      100%{-webkit-transform:rotate(-3deg)}
+    }
+    .sway {
+      -moz-animation: 1s ease 0s normal none infinite swing;
+      -moz-transform-origin: center top;
+      -webkit-animation:swing 1s infinite ease-in-out;
+      -webkit-transform-origin:top;
+    }
+  </style>
   </head>
   <body>
-    <marquee>
-      <h1>DOLA WEDDING 2K16 GET HYPED</h1>
-      <img src="/assets/maxtux.gif" alt="Max in a tux" />
+    <audio src="assets/celebration.mp3" autoplay="autoplay"></audio>
+    <img src="/assets/CoolSun.png" alt="a cool sun" style="position: absolute; top: 0; left: 0; transform: scaleX(-1);" width="200" />
+    <marquee style="background: #55f; height: 400px;">
+      <h1 style="color: #fff; font-family: 'Faster One', Comic Sans MS; font-size: 64px;">DOLA WEDDING 2K16 GET HYPED</h1>
     </marquee>
+    <marquee style="position: absolute; top: 220px;">
+      <img class="sway" src="/assets/maxtux.gif" alt="Max in a tux" height="316" />
+    </marquee>
+    <div style="width: 100%; background: #0f0; height: 200px; margin-top: -10px;">
+      &nbsp;
+    </div>
   </body>
 </html>
