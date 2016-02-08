@@ -6,29 +6,78 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Dola Wedding</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
     <link href="/style.css" rel="stylesheet">
   </head>
   <body>
     <!-- damn much love to Keith Clark http://keithclark.co.uk/articles/pure-css-parallax-websites/ -->
     <header>
     </header>
-    <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">What a Cool Wedding!</a>
+    <nav class="navbar navbar-fixed-top navbar-dark">
+      <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+        &#9776;
+      </button>
+      <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar2">
+          <a class="navbar-brand" href="#slide-1">Lauren and Dan</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-2">Where</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-3">RSVP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-4">What to Expect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-5">Travel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-6">Attire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-7">Registry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-8">What to Do</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slide-9">Our Cute Story</a>
+            </li>
+          </ul>
+        </div>
     </nav>
     <!-- svg is defined here because of a Safari bug with <use> -->
     <svg>
       <defs>
+      <pattern id="invitep" patternUnits="userSpaceOnUse" width="250" height="250">
+          <image xlink:href="/assets/invite.jpg" x="0" y="0" width="250" height="250"> </image>
+      </pattern>
+      <pattern id="rsvpp" patternUnits="userSpaceOnUse" width="250" height="250">
+          <image xlink:href="/assets/rsvp.jpg" x="0" y="0" width="250" height="250"> </image>
+      </pattern>
       <pattern id="cards" patternUnits="userSpaceOnUse" width="250" height="250">
           <image xlink:href="/assets/cards.jpg" x="0" y="0" width="250" height="250"> </image>
       </pattern>
+        <g id="rsvp">
+          <path opacity=".2" d="M0 2h252s-3.3 40.7-2.7 128.3C249 216 252 272 252 272s-88-2-124.3-2C91.3 270 0 272 0 272V0z"/>
+          <path fill="#f4f3f1" d="M0 0h248v270H0z"/>
+          <path fill="url(#rsvpp)" d="M8 10h233v203H8z"/>
+        </g>
+        <g id="invite">
+          <path opacity=".2" d="M0 2h252s-3.3 40.7-2.7 128.3C249 216 252 272 252 272s-88-2-124.3-2C91.3 270 0 272 0 272V0z"/>
+          <path fill="#f4f3f1" d="M0 0h248v270H0z"/>
+          <path fill="url(#invitep)" d="M8 10h233v203H8z"/>
+        </g>
         <g id="p">
           <path opacity=".2" d="M0 2h252s-3.3 40.7-2.7 128.3C249 216 252 272 252 272s-88-2-124.3-2C91.3 270 0 272 0 272V0z"/>
           <path fill="#f4f3f1" d="M0 0h248v270H0z"/>
           <path fill="url(#cards)" d="M8 10h233v203H8z"/>
         </g>
-        <g id="polaroid">
-          <use xlink:href="#p" transform="rotate(15)" x="175" y="50"/>
-          <use xlink:href="#p" transform="rotate(-5)" x="5" y="25"/>
+        <g id="rsvping">
+          <use xlink:href="#rsvp" transform="rotate(15)" x="175" y="50"/>
+          <use xlink:href="#invite" transform="rotate(-5)" x="5" y="25"/>
         </g>
       </defs>
     </svg>
@@ -38,10 +87,9 @@
         <div class="slide_bg"></div>
         <div class="slide_content">
           <div class="slide_text">
-            <h1 id="slide-1-title">Slide 1 title</h1>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
+            <h1 id="slide-1-title">We're getting married!</h1>
+            <p>Lauren + Dan 2gether 4ever</p>
           </div>
-          <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#polaroid"/></svg>
         </div>
       </div>
 
@@ -49,12 +97,15 @@
         <div class="slide_bg"></div>
         <div class="slide_content">
           <div class="slide_text">
-            <h1 id="slide-2-title">Slide 2 title</h1>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
+            <h1 id="slide-2-title">Welcome to Las Vegas!</h1>
+            <p>We are getting married in beautiful Las Vegas, Nevada!</p>
+            <p>Location: The Courtyard at the Tropicana Hotel and Casino</p>
+            <p>Date: June 4th, 2016 at 6:00 PM PDT</p>
+            <p>Reception to follow at the Havana Room at the Tropicana.</p>
+            <small>Be on time and don't be too drunk, thanks~</small>
           </div>
           <div class="slide_image">
-            <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#polaroid"/></svg>
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/QKJgkisWn7Q' frameborder='0' allowfullscreen></iframe></div>
           </div>
         </div>
       </div>
@@ -63,12 +114,12 @@
         <div class="slide_bg"></div>
         <div class="slide_content">
           <div class="slide_text">
-            <h1 id="slide-3-title">Slide 3 title</h1>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
+            <h1 id="slide-3-title">RSVP</h1>
+            <p>You can RSVP online right <a href="http://goo.gl/forms/ast09jlHh9">here!</a></p>
+            <p>Please RSVP by Saturday, April 30th.</p>
           </div>
           <div class="slide_image">
-            <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#polaroid"/></svg>
+            <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#rsvping"/></svg>
           </div>
         </div>
       </div>
@@ -77,12 +128,15 @@
         <div class="slide_bg"></div>
         <div class="slide_content">
           <div class="slide_text">
-            <h1 id="slide-4-title">Slide 4 title</h1>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
+            <h1 id="slide-4-title">What to expect</h1>
+            <ul>
+              <li>A wedding ceremony (15-20 minutes)</li>
+              <li>A cocktail hour (open bar!)</li>
+              <li>Dinner, drinks, and dancin' (still open bar)!</li>
+            </ul>
+            <small>Dinner won't be served 'til 8-ish, so plan accordingly.</small>
           </div>
-          <div class="slide_image">
-            <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#polaroid"/></svg>
-          </div>
+          <img class="slide_image" src="/assets/greece.gif" alt="greece and disrupt" />
         </div>
       </div>
 
@@ -90,12 +144,14 @@
         <div class="slide_bg"></div>
         <div class="slide_content">
           <div class="slide_text">
-            <h1 id="slide-5-title">Slide 5 title</h1>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
+            <h1 id="slide-5-title">Travel / Accomodation</h1>
+            <p>Fly into McCarran International Airport (LAS).</p>
+            <p>The best way to travel from the airport is probably Uber or Lyft.  If you've never used Uber or Lyft before, they are ride-hailing apps that you can download for your Android phone or iPhone.  Use promo code "<a href="https://www.uber.com/invite/6micy">6micy</a>" for an Uber discount and "<a href="https://www.lyft.com/invited/DAHA67">DAHA67</a>" for a Lyft discount!</p>
+            You can also take a shuttle, but they tend to take forever. If you're from out of town, taxis will try to long-haul you, so watch out. Don't let them take the highway, it's a trap!</p>
+            <p>We recommend staying at the Tropicana Hotel and Casino (room block info to come, or contact us if needed).</p>
+            <p>If you'd like to stay somewhere else, the closest hotels to the Tropicana are the Excalibur, MGM Grand, and New York New York. Also, Hooters Hotel & Casino is next door and usually VERY CHEAP - stay at your own risk. Anywhere else will be a further walk than you think.</p>
           </div>
-          <div class="slide_image">
-            <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#polaroid"/></svg>
-          </div>
+          <img src="/assets/twa.jpg" alt="TWA" class="slide_image" />
         </div>
       </div>
 
@@ -103,8 +159,20 @@
         <div class="slide_bg"></div>
         <div class="slide_content">
           <div class="slide_text">
-            <h1 id="slide-6-title">Slide 6 title</h1>
-            <p>Bacon ipsum dolor amet alcatra beef meatloaf brisket beef ribs meatball tenderloin shank ball tip ribeye pig pastrami filet mignon. Sirloin tail fatback venison shank salami. Picanha pastrami venison meatball kevin pork chop leberkas. Meatloaf tenderloin leberkas pancetta hamburger cow kielbasa, filet mignon tri-tip beef ribs.</p>
+            <h1 id="slide-6-title">What do I wear?</h1>
+            <p>Well, it's an outdoor wedding and the temperature this time of year is expected to be around 85° with no humidity.</p>
+            <p>Summer clothing is appropriate. Kinda dressy, but not <em>too</em> dressy or formal. Unless you really want to!  You do you. </p>
+          </div>
+          <img class="slide_image" src="/assets/lucha.jpg" alt="lucha" />
+        </div>
+      </div>
+
+      <div class="slide" id="slide-7">
+        <div class="slide_bg"></div>
+        <div class="slide_content">
+          <div class="slide_text">
+            <h1 id="slide-7-title">Registry</h1>
+            <p><a href="https://www.zola.com/registry/coolwedding">Here</a> is a link to our registry, if you're into that sort of thing.</p>
           </div>
           <div class="slide_image">
             <svg viewBox="0 0 400 425" width="400" height="425"><use xlink:href="#polaroid"/></svg>
@@ -112,9 +180,34 @@
         </div>
       </div>
 
+      <div class="slide" id="slide-8">
+        <div class="slide_bg"></div>
+        <div class="slide_content">
+          <div class="slide_text">
+            <h1 id="slide-8-title">What to do</h1>
+            <p>VEGAS baby WOO</p>
+          </div>
+          <div class="slide_image"></div>
+        </div>
+      </div>
+
+      <div class="slide" id="slide-9">
+        <div class="slide_bg"></div>
+        <div class="slide_content">
+          <div class="slide_text">
+            <h1 id="slide-9-title">How We Met</h1>
+            <p>We started dating because Dan's boss, Sotheavy, suggested to Lauren that she date Dan because they both liked robots and getting to the airport early, and they both had tiny hands.
+            Lauren always listens to Sotheavy.  That's it.   That's the whole story.</p>
+          </div>
+          <img class="slide_image" src="/assets/lego.jpg" alt="lego my eggo" />
+        </div>
+      </div>
+
     </div>
     <footer>
     </footer>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   </body>
 </html>
