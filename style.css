@@ -6,7 +6,7 @@ body {
   font: 120% / 1.5 Arial;
   scroll-behavior: smooth;
   color: #fff;
-  text-shadow: 1px 1px 1px #666;
+  text-shadow: 1px 1px 1px #000;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -66,7 +66,7 @@ nav a {
 }
 .slide_text {
   background-color: rgba(0,0,0,0.4);
-  padding: 10%;
+  padding: 7%;
 }
 
 .slide_image {
@@ -93,7 +93,7 @@ nav a {
   );
 }
 .wide {
-  background-position: no repeat;
+  background-position: center;
   background-size: cover;
 }
 .wide .slide_text {
@@ -117,9 +117,9 @@ nav a {
   background-image: url(/assets/redrock.jpg);
 }
 
-#slide-1 .slide_text * {
-  flex: 1;
+#slide-1 .slide_text {
   text-align: center;
+  background: transparent;
 }
 
 #slide-1 h1 {
@@ -137,7 +137,6 @@ nav a {
     align-items: center;
   }
   .slide_content > * {
-    padding: 3%;
     flex: 1;
   }
   .slide:nth-child(2n) .slide_text {
@@ -168,8 +167,13 @@ nav a {
       height: 100%;
       width: 100%;
     }
-    .slide_content {
-      transform: translateZ(60px) scale(.8);
+    .slide_text {
+      transform: translateZ(20px) scale(.96);
+      padding: 5%;
+    }
+    .slide_image {
+      transform: translateZ(60px) scale(.96);
+      padding: 7%;
     }
     .slide:nth-child(2n) {
         z-index: 1;
