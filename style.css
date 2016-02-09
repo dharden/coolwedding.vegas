@@ -23,9 +23,9 @@ body > svg {
 }
 
 a {
-    text-decoration: underline;
-    text-shadow: none;
-    color: #fff;
+  text-decoration: underline;
+  text-shadow: none;
+  color: #fff;
 }
 
 p {
@@ -43,7 +43,7 @@ h1 {
 }
 
 nav a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .shippo {
@@ -59,7 +59,6 @@ nav a {
 
 .slide {
   position: relative;
-  padding: 8% 0;
   display: flex;
 }
 .slide_content {
@@ -73,20 +72,12 @@ nav a {
   max-width: 560px;
   margin: auto;
 }
-.slide_bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
 .slide_text {
-      background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* slide backgrounds */
-.slide .slide_bg {
+.slide {
   background-image: repeating-linear-gradient(
   rgb(153, 216, 101),
   rgb(153, 216, 101) 30px,
@@ -94,7 +85,7 @@ nav a {
   rgb(133, 196, 81) 60px
   );
 }
-.slide:nth-child(2n) .slide_bg {
+.slide:nth-child(2n) {
   background-image: repeating-linear-gradient(
   90deg,
   rgb(133, 173, 230),
@@ -108,23 +99,22 @@ nav a {
   background-size: cover;
 }
 .wide .slide_text {
-  transform: translateZ(60px) scale(.8);
   transform-origin: initial;
   display: flex;
   flex-flow: column nowrap;
 }
 
-#slide-1 .slide_bg {
+#slide-1 {
   background-image: url(/assets/babies.gif);
 }
 
-#slide-2 .slide_bg {
+#slide-2 {
   background-image: url(https://pixabay.com/static/uploads/photo/2015/12/10/14/15/welcome-to-las-vegas-1086412_960_720.jpg);
 }
-#slide-5 .slide_bg {
+#slide-5 {
   background-image: url(https://pixabay.com/static/uploads/photo/2015/12/10/14/15/welcome-to-las-vegas-1086412_960_720.jpg);
 }
-#slide-8 .slide_bg {
+#slide-8 {
   background-image: url(/assets/redrock.jpg);
 }
 
@@ -144,24 +134,20 @@ nav a {
 @media screen and (min-width: 45em) {
 
   .slide_content {
-    display: -webkit-flex;
     display: flex;
     align-items: center;
   }
   .slide_content > * {
     padding: 3%;
-    -webkit-flex: 1;
     flex: 1;
     width: 100%;
   }
   .slide:nth-child(2n) .slide_text {
-    -webkit-order: 1;
     order: 1;
   }
 
   /* parallax */
   @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
-
     html, body {
       overflow: hidden;
       height: 100%;
@@ -178,36 +164,16 @@ nav a {
       perspective: 300px;
       scroll-behavior: smooth;
     }
-    .slide, .slide_content {
+    .slide {
       transform-style: preserve-3d;
+      position: relative;
+      height: 100%;
+      width: 100%;
     }
-    .slide_text {
+    .slide_content {
       transform: translateZ(60px) scale(.8);
-      transform-origin: 100% 50%;
-    }
-    .slide:nth-child(2n) .slide_image {
-      transform: translateZ(100px) scale(.67);
-      transform-origin: 100% 50%;
-    }
-    .slide:nth-child(2n) .slide_text {
-      transform-origin: 0% 50%;
-    }
-    .slide:nth-child(2n) .slide_bg {
-      transform: translateZ(59px) scale(.85);
-    }
-    .slide:nth-child(2n+1):not(:first-child) .slide_bg {
-      top: -50%;
-    }
-    .slide:nth-child(2n+1):not(:last-child) .slide_bg {
-      bottom: -50%;
-    }
-    .slide:first-child {
-      padding-top: 14%;
-    }
-    .slide:last-child {
-      padding-bottom: 14%;
     }
     .slide:nth-child(2n) {
-      z-index: 1; /* ensure slides overlay correctly */
+        z-index: 1;
     }
 }
