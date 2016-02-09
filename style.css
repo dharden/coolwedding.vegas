@@ -23,7 +23,9 @@ body > svg {
 }
 
 a {
+    text-decoration: underline;
     text-shadow: none;
+    color: #fff;
 }
 
 p {
@@ -38,6 +40,10 @@ h1 {
 
 .navbar-fixed-top {
   background: rgba(0,0,0,0.5) !important;
+}
+
+nav a {
+    text-decoration: none;
 }
 
 .shippo {
@@ -75,6 +81,9 @@ h1 {
   bottom: 0;
   z-index: -1;
 }
+.slide_text {
+      background-color: rgba(0,0,0,0.4);
+}
 
 /* slide backgrounds */
 .slide .slide_bg {
@@ -94,21 +103,34 @@ h1 {
   rgb(113, 153, 210) 60px
   );
 }
-#slide-1 .slide_bg {
-  background-image: url(/assets/babies.gif);
+.wide, .wide .slide_bg {
+  background-position: no repeat;
   background-size: cover;
 }
-
-#slide-1 .slide_text {
-  text-align: center;
+.wide .slide_text {
   transform: translateZ(60px) scale(.8);
   transform-origin: initial;
   display: flex;
   flex-flow: column nowrap;
 }
 
+#slide-1 .slide_bg {
+  background-image: url(/assets/babies.gif);
+}
+
+#slide-2 .slide_bg {
+  background-image: url(https://pixabay.com/static/uploads/photo/2015/12/10/14/15/welcome-to-las-vegas-1086412_960_720.jpg);
+}
+#slide-5 .slide_bg {
+  background-image: url(https://pixabay.com/static/uploads/photo/2015/12/10/14/15/welcome-to-las-vegas-1086412_960_720.jpg);
+}
+#slide-8 .slide_bg {
+  background-image: url(/assets/redrock.jpg);
+}
+
 #slide-1 .slide_text * {
   flex: 1;
+  text-align: center;
 }
 
 #slide-1 h1 {
