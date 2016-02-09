@@ -46,14 +46,6 @@ nav a {
   text-decoration: none;
 }
 
-.shippo {
-  background-color:#FEE0C6;
-  background-image: radial-gradient(closest-side, transparent 98%, rgba(255,99,71,.3) 99%),
-  radial-gradient(closest-side, transparent 98%, rgba(255,99,71,.3) 99%);
-  background-size:80px 80px;
-  background-position:0 0, 40px 40px;
-}
-
 /* slide layout
 --------------------------------------------- */
 
@@ -74,6 +66,12 @@ nav a {
 }
 .slide_text {
   background-color: rgba(0,0,0,0.4);
+  padding: 10%;
+}
+
+.slide_image {
+  width: 100%;
+  height: 100%;
 }
 
 /* slide backgrounds */
@@ -94,7 +92,7 @@ nav a {
   rgb(113, 153, 210) 60px
   );
 }
-.wide, .wide .slide_bg {
+.wide {
   background-position: no repeat;
   background-size: cover;
 }
@@ -112,7 +110,8 @@ nav a {
   background-image: url(https://pixabay.com/static/uploads/photo/2015/12/10/14/15/welcome-to-las-vegas-1086412_960_720.jpg);
 }
 #slide-5 {
-  background-image: url(https://pixabay.com/static/uploads/photo/2015/12/10/14/15/welcome-to-las-vegas-1086412_960_720.jpg);
+  /* from https://www.flickr.com/photos/seat850/3191357513 */
+  background-image: url(https://c2.staticflickr.com/4/3265/3191357513_117fd717b4_b.jpg);
 }
 #slide-8 {
   background-image: url(/assets/redrock.jpg);
@@ -140,7 +139,6 @@ nav a {
   .slide_content > * {
     padding: 3%;
     flex: 1;
-    width: 100%;
   }
   .slide:nth-child(2n) .slide_text {
     order: 1;
