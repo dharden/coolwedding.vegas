@@ -51,11 +51,19 @@ nav a {
 
 .slide {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  height: 800px;
+  height: 100vh;
 }
 .slide_content {
   margin: auto;
-  flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 5%;
 }
 .slide svg {
@@ -76,6 +84,12 @@ nav a {
 
 /* slide backgrounds */
 .slide {
+  background-image: -webkit-repeating-linear-gradient(
+  rgb(153, 216, 101),
+  rgb(153, 216, 101) 30px,
+  rgb(133, 196, 81) 30px,
+  rgb(133, 196, 81) 60px
+  );
   background-image: repeating-linear-gradient(
   rgb(153, 216, 101),
   rgb(153, 216, 101) 30px,
@@ -84,6 +98,13 @@ nav a {
   );
 }
 .slide:nth-child(2n) {
+  background-image: -webkit-repeating-linear-gradient(
+  left,
+  rgb(133, 173, 230),
+  rgb(133, 173, 230) 30px,
+  rgb(113, 153, 210) 30px,
+  rgb(113, 153, 210) 60px
+  );
   background-image: repeating-linear-gradient(
   90deg,
   rgb(133, 173, 230),
@@ -97,9 +118,15 @@ nav a {
   background-size: cover;
 }
 .wide .slide_text {
-  transform-origin: initial;
+  -webkit-transform-origin: initial;
+          transform-origin: initial;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 #slide-1 {
@@ -133,24 +160,37 @@ nav a {
 @media screen and (min-width: 45em) {
 
   .slide_content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .slide_content > * {
-    flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
   .slide:nth-child(2n) .slide_text {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
   }
 
   /* parallax */
-  @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+  @supports (((-webkit-perspective: 1px) or (perspective: 1px)) and (not (-webkit-overflow-scrolling: touch))) {
     html, body {
       overflow: hidden;
       height: 100%;
     }
     body {
-      transform: translateZ(0px); /* Fix paint issues in Edge && Safari H/W acceleration */
+      -webkit-transform: translateZ(0px);
+              transform: translateZ(0px); /* Fix paint issues in Edge && Safari H/W acceleration */
     }
     .slides {
       position: absolute;
@@ -158,24 +198,29 @@ nav a {
       height: 100%;
       overflow-x: hidden;
       overflow-y: auto;
-      perspective: 300px;
+      -webkit-perspective: 300px;
+              perspective: 300px;
       scroll-behavior: smooth;
     }
     .slide {
-      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
       position: relative;
       height: 100%;
       width: 100%;
     }
     .slide_text {
-      transform: translateZ(20px) scale(.96);
+      -webkit-transform: translateZ(20px) scale(.96);
+              transform: translateZ(20px) scale(.96);
       padding: 5%;
     }
     .slide_image {
-      transform: translateZ(60px) scale(.96);
+      -webkit-transform: translateZ(60px) scale(.96);
+              transform: translateZ(60px) scale(.96);
       padding: 7%;
     }
     .slide:nth-child(2n) {
         z-index: 1;
     }
+  }
 }
